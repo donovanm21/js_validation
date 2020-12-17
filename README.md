@@ -1,6 +1,6 @@
 # Various Form Validations - Javascript
 
-## TODO
+## ToDo - Frontend
 - Add tooltip popups
 - Add form validation on input
 - Check input before POST
