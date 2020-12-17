@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Form Validation</title>
+        <link rel="stylesheet" href="css/styles.css" >
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header></header>
+        <!-- Nav Section -->
+        <nav></nav>
+        <!-- Form Content -->
+        <section>
+            <article>
+                <div class="form-body">
+                    <h1>Task Form</h1>
+                    <form action="#">
+                        <div class="inline-flex">
+                            <span class="labels">New Task</span>
+                                <input type="text" id="newTask" required /><br>
+                                <p id="newTaskError">Please make sure your task contains no HTML characters html</p>
+                            <span class="labels">Task Description</span>
+                                <textarea></textarea><br>
+                            <span class="labels">Set Task Due Date</span>
+                                <input type="date" required /><br>
+                            <span class="labels">Set Task Due Time</span>
+                                <input type="time" required /><br><br>
+                            <input type="submit" class="submit" onclick="myValidation()"/>
+                        </div>
+                    </form>
+                </div>
+            </article>
+        </section>
+        <!-- Task List Content -->
+        <section>
+            <article>
+                <div class="taskList">
+                    <h1>Task List</h1>
+                    <ul id="myNewTaskList">
+
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <!-- Footer Section -->
+        <footer></footer>
+        <!-- Scripts -->
+        <script>
+            function myValidation(){
+                let x = document.getElementById("newTask").value;
+                if (x.includes("<") || x.includes(">")) {
+                    document.getElementById("newTaskError").style.display = "block";
+                }
+                var emptyListTag = document.createElement("li");
+                emptyListTag.innerText = x;
+                document.getElementById("myNewTaskList").appendChild(emptyListTag);
+            }
+        </script>
+    </body>
+</html>
